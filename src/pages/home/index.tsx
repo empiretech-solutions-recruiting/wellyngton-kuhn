@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  
+
   return (
     <main className="w-full">
       <div className="container mx-auto px-5">
