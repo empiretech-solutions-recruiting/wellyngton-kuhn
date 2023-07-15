@@ -51,13 +51,15 @@ export default function Dashboard() {
   return (
     <main className="w-full mt-4">
       <section className="container mx-auto px-5">
-        <div className="flex flex-col md:flex-row-reverse md:justify-between md:items-center md:gap-10">
+        <div className="flex flex-col md:flex-row-reverse md:justify-between md:items-center md:gap-10 z-0">
           <div className="w-full">
-            <h3 className="text-lg text-gray-950 font-normal">
+            <h3 className="text-lg text-gray-700 font-normal md:text-xl">
               Olá,
               <span className="font-medium"> {user.name}!</span>
             </h3>
-            <p className="mb-4">Insira um cep válido para pesquisar.</p>
+            <p className="mb-4 text-gray-700">
+              Insira um cep válido para pesquisar.
+            </p>
 
             <form
               onSubmit={handleSubmit(handleCepSearch)}
@@ -85,7 +87,7 @@ export default function Dashboard() {
             </form>
           </div>
 
-          <div className="w-full mt-4">
+          <div className="w-full my-4">
             <BrazilMap brazilState={data?.uf} />
           </div>
         </div>

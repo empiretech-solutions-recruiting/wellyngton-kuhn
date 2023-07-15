@@ -24,8 +24,8 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full shadow-lg fixed top-0 left-0">
-      <div className="container mx-auto py-5 flex justify-between  items-center px-4">
+    <header className="w-full shadow-lg">
+      <div className="container mx-auto py-5 flex justify-between items-center px-4">
         <Link to="/" onClick={() => handleCloseMenuMobile()}>
           <h1 className="flex flex-col justify-center items-center leading-5  font-medium text-xl text-blue-800 md:text-2xl md:leading-6">
             EmpireTech <span>Solutions</span>

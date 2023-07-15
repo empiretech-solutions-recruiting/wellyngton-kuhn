@@ -80,11 +80,11 @@ export default function Login() {
         <div className="md:max-w-sm mx-auto">
           {accessToken ? (
             <div className="flex flex-col items-center justify-center mb-5">
-              <h3 className="text-lg text-gray-950 font-normal">
+              <h3 className="text-lg text-gray-700 font-normal">
                 Bem vindo novamente
                 <span className="font-medium"> {user.name}!</span>
               </h3>
-              <p>
+              <p className="text-gray-700">
                 Redirecionando para o dashboard em{" "}
                 <span className="font-medium">{countDown}</span>
               </p>
@@ -92,7 +92,7 @@ export default function Login() {
           ) : (
             <>
               <div className="mb-5">
-                <h1 className="text-2xl text-gray-950 font-semibold ">Login</h1>
+                <h1 className="text-2xl text-gray-700 font-semibold ">Login</h1>
                 {isErrorMessageLogin && (
                   <p className="text-sm font-normal text-red-500">
                     Email ou Senha incorreto.
