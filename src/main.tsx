@@ -7,6 +7,7 @@ import Header from "components/Header";
 import { Provider } from "react-redux";
 import { store } from "redux/store";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import Footer from "components/Footer";
 
 const client = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <BrowserRouter>
           <Header />
           <RoutesFile />
+          <Footer />
         </BrowserRouter>
       </QueryClientProvider>
     </Provider>
