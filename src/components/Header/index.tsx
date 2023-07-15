@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useAppDispatch, useAppSelector } from "redux/reduxHooks";
+import { logout } from "redux/userSlice";
 
 export default function Header() {
   const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
+  const { accessToken } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
 
   const handleToggleMenuMobile = () => {
     setIsMenuMobileOpen((prev) => !prev);
@@ -12,6 +16,11 @@ export default function Header() {
 
   const handleCloseMenuMobile = () => {
     setIsMenuMobileOpen(false);
+  };
+
+  const handleLogout = () => {
+    setIsMenuMobileOpen(false);
+    dispatch(logout());
   };
 
   return (
@@ -32,13 +41,23 @@ export default function Header() {
             </li>
             <li>
               <Link to="/dashboard" className="text-lg font-normal">
-                Dasboard
+                Dashboard
               </Link>
             </li>
             <li>
-              <Link to="/login" className="text-lg font-normal">
-                Login
-              </Link>
+              {accessToken ? (
+                <Link
+                  to="/login"
+                  className="text-lg font-normal"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </Link>
+              ) : (
+                <Link to="/login" className="text-lg font-normal">
+                  Login
+                </Link>
+              )}
             </li>
           </ul>
         </nav>
@@ -74,13 +93,23 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/login"
-                  className="text-base font-medium"
-                  onClick={handleCloseMenuMobile}
-                >
-                  Login
-                </Link>
+                {accessToken ? (
+                  <Link
+                    to="/login"
+                    className="text-base font-medium"
+                    onClick={() => handleLogout()}
+                  >
+                    Logout
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="text-base font-medium"
+                    onClick={handleCloseMenuMobile}
+                  >
+                    Login
+                  </Link>
+                )}
               </li>
             </ul>
           </nav>
