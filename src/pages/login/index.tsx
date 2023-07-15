@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import useLogin from "utils/login";
 
 const loginShema = yup.object({
   email: yup.string().email("email inválido").required("campo obrigatório"),
@@ -15,6 +17,7 @@ const loginShema = yup.object({
 type Login = yup.InferType<typeof loginShema>;
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -30,8 +33,17 @@ export default function Login() {
     setShowPassword((prev) => !prev);
   };
 
-  const handleLogin: SubmitHandler<Login> = (data) => {
-    console.log(data);
+  const handleLogin: SubmitHandler<Login> = async (data) => {
+    if (data.email && data.password) {
+      const response = await useLogin(data);
+      if (response?.status === 400) {
+        alert(response.data);
+      }
+      if (response?.status === 200) {
+        navigate("/dashboard", { replace: true });
+      }
+    }
+    return;
   };
 
   return (

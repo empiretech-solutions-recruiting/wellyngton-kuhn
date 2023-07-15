@@ -3,3 +3,5 @@
 ## Todo
 
 [] Criar um Loading de Suspense para carregar as páginas
+[] Deixar o Header fixo
+[] Footer

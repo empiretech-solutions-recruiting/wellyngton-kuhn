@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "well@gmail.com",
+      "password": "$2a$10$McROYmPvicntowErBClpiuoFhGqxvIUd6z71BCPqS6bdia1FekoG6",
+      "name": "Wellyngton Kuhn",
+      "id": 1
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$TnvznNfQ1HYElJYEXhRXPeN34avqAjP3ENegXJr4UsBSiXcZBH3N.",
+      "name": "Admin",
+      "id": 2
+    }
+  ]
+}
