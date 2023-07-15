@@ -2,7 +2,7 @@
 
 ## Instruções para rodar local
 
-### Clone o repositório [wellygton-kuhn](https://github.com/empiretech-solutions-recruiting/wellyngton-kuhn.git) e execute e inicie o projeto.
+### Clone o repositório [wellygton-kuhn](https://github.com/empiretech-solutions-recruiting/wellyngton-kuhn.git), instale as dependências e inicie o projeto.
 
 ```
 `npm run dev` - para rodar em modo de desenvolvimento.
