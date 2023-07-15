@@ -1,7 +1,17 @@
-# Teste para Frontend Developer at EmpiresTech Solution
+# Frontend Developer Test Code at EmpiresTech Solution
 
-## Todo
+## Instruções para rodar local
 
-[] Criar um Loading de Suspense para carregar as páginas
-[] Deixar o Header fixo
-[] Footer
+### Clone o repositório [wellygton-kuhn](https://github.com/empiretech-solutions-recruiting/wellyngton-kuhn.git) e execute e inicie o projeto.
+
+```
+`npm run dev` - para rodar em modo de desenvolvimento.
+`npm run jsondb` - para iniciar o Json Server.
+```
+
+### Use os dados a baixo para logar.
+
+```
+`email:` - admin@gmail.com
+`senha:` - 123456789
+```
