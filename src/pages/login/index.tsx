@@ -37,6 +37,10 @@ export default function Login() {
     mode: "all",
   });
 
+  const handleShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   useEffect(() => {
     if (accessToken) {
       const interval = setInterval(() => {
@@ -54,10 +58,6 @@ export default function Login() {
       return () => clearInterval(interval);
     }
   }, []);
-
-  const handleShowPassword = () => {
-    setShowPassword((prev) => !prev);
-  };
 
   const handleLogin: SubmitHandler<LoginType> = async (data) => {
     if (data.email && data.password) {
